@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 
 public class PlaneTest {
 
-    Plane plane;
+    private Plane plane;
 
     @Before
     public void before(){

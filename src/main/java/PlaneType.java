@@ -4,7 +4,7 @@ public enum PlaneType {
     private int capacity;
     private int totalWeight;
 
-    private PlaneType(int capacity, int totalWeight){
+    PlaneType(int capacity, int totalWeight){
         this.capacity = capacity;
         this.totalWeight = totalWeight;
     }
