@@ -28,11 +28,6 @@ public class Flight {
         return this.passengers.size();
     }
 
-    public void addPassenger(Passenger passenger) {
-        this.passengers.add(passenger);
-    }
-
-
 
     public int numberOfSeatsAvailable() {
         int seatsAvailable =  plane.getPlanesCapacity() - this.passengers.size();
@@ -40,4 +35,17 @@ public class Flight {
     }
 
 
+    public boolean planeHasCapacity() {
+//        int seatsAvailable =  plane.getPlanesCapacity() - this.passengers.size();
+//        if (seatsAvailable > 0);
+//        return true;
+        return this.numberOfSeatsAvailable() > 0;
+    }
+
+    public void addPassenger(Passenger passenger) {
+        if (planeHasCapacity()) {
+            this.passengers.add(passenger);
+        }
+    }
 }
+

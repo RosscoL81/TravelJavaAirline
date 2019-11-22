@@ -11,6 +11,7 @@ public class FlightTest {
     private Passenger passenger3;
     private Passenger passenger4;
     private Passenger passenger5;
+    private Passenger passenger6;
     private Plane plane;
 
     @Before
@@ -19,9 +20,10 @@ public class FlightTest {
         flight = new Flight(plane, "BA123", "LHR", "EDI", "0800");
         passenger1 = new Passenger("Alfredo Morelos", 2);
         passenger2 = new Passenger("Steven Davis", 1);
-        passenger1 = new Passenger("James Tavernier", 2);
-        passenger1 = new Passenger("Jermain Defoe", 3);
-        passenger1 = new Passenger("Joe Aribo", 2);
+        passenger3 = new Passenger("James Tavernier", 2);
+        passenger4 = new Passenger("Jermain Defoe", 3);
+        passenger5 = new Passenger("Joe Aribo", 2);
+        passenger6 = new Passenger("Borna Barisic", 1);
     }
 
     @Test
@@ -37,13 +39,29 @@ public class FlightTest {
 
     @Test
     public void testNumberOfSeatsAvailable(){
-        assertEquals(10, flight.numberOfSeatsAvailable());
+        assertEquals(5, flight.numberOfSeatsAvailable());
     }
 
     @Test
     public void testPlaneHasCapacity(){
-        
+        assertEquals(true, flight.planeHasCapacity());
     }
 
+    @Test
+    public void testCanBookPassenger(){
+        flight.addPassenger(passenger1);
+        assertEquals(1, flight.getNumberOfPassengers());
+    }
+
+    @Test
+    public void testCannotAddPassenger__planeFull(){
+        flight.addPassenger(passenger1);
+        flight.addPassenger(passenger2);
+        flight.addPassenger(passenger3);
+        flight.addPassenger(passenger4);
+        flight.addPassenger(passenger5);
+        flight.addPassenger(passenger6);
+        assertEquals(5, flight.getNumberOfPassengers());
+    }
 
 }
