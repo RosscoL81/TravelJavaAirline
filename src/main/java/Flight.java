@@ -31,4 +31,13 @@ public class Flight {
     public void addPassenger(Passenger passenger) {
         this.passengers.add(passenger);
     }
+
+
+
+    public int numberOfSeatsAvailable() {
+        int seatsAvailable =  plane.getPlanesCapacity() - this.passengers.size();
+        return seatsAvailable;
+    }
+
+
 }
