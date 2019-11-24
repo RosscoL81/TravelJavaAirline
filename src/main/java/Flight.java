@@ -36,9 +36,6 @@ public class Flight {
 
 
     public boolean planeHasCapacity() {
-//        int seatsAvailable =  plane.getPlanesCapacity() - this.passengers.size();
-//        if (seatsAvailable > 0);
-//        return true;
         return this.numberOfSeatsAvailable() > 0;
     }
 
@@ -46,6 +43,26 @@ public class Flight {
         if (planeHasCapacity()) {
             this.passengers.add(passenger);
         }
+    }
+
+    public Plane getPlane() {
+        return this.plane;
+    }
+
+    public String getFlightNumber() {
+        return this.flightNumber;
+    }
+
+    public String getDestination() {
+        return this.destination;
+    }
+
+    public String getDepartureAirport() {
+        return this.departureAirport;
+    }
+
+    public String getDepartureTime() {
+        return this.departureTime;
     }
 }
 
